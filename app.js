@@ -17,9 +17,11 @@ async function main(){
     const entradaInicial = await input('Deseja buscar um livro? S/N ');
 
     if (entradaInicial.toLocaleUpperCase() === 'S') {
+        console.log('\n')
         console.log('Essas são as categorias disponíveis: ');
-        console.log('Produtividade e estilo de vida', '/História brasileira', '/Américas', '/Tecnologia', '/Estilo de vida');
-        
+        const categorias = livros.map(livro => console.log(livro.categoria));
+        console.log('\n')
+                
         const entradaCategoria = await input('Qual categoria você escolhe? ');
 
         const retorno = livros.filter(livro => livro.categoria === entradaCategoria);
